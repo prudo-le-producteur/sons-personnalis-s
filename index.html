@@ -79,14 +79,33 @@
     background: linear-gradient(180deg, #f5f7fa 0%, #e9efff 100%);
     color: #333;
   }
+header {
+  background: url('background.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+}
 
-  header {
-    background: linear-gradient(90deg, #4f46e5, #3b82f6);
-    color: white;
-    text-align: center;
-    padding: 3rem 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+/* Optionnel : un léger voile sombre pour que le texte reste lisible */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4); /* fonce légèrement l’image */
+  border-radius: inherit;
+  z-index: 0;
+}
+
+header * {
+  position: relative;
+  z-index: 1; /* pour que le texte soit au-dessus du voile */
+}
+
 
   header h1 {
     margin: 0;
@@ -286,7 +305,7 @@ button:hover {
 <body>
   <header>
   <img src="logo.png" alt="Logo de la boutique" class="logo">
-  <h1>Sons personnalisés pour vos événements</h1>
+  <h1>Biennenue dans l'univers de Prudo le producteur,specialiste des Sons personnalisés pour vos événements</h1>
   <p>Créez l’ambiance parfaite pour chaque moment ! 🎵</p>
 </header>
 
